@@ -23,7 +23,7 @@ $currentDate = Get-Date
 #$oldBackups = Get-ChildItem -Path $destinationPath -Directory | Where-Object { $_.Name -like "backup_*" -and $_.LastWriteTime -lt $twodaysAgo }
 
 # Calculate the date and time 15 hours ago
-$hoursAgo = 15
+$hoursAgo = 18
 $thresholdTime = $currentDate.AddHours(-$hoursAgo)
 
 # Get a list of backup folders older than 15 hours
